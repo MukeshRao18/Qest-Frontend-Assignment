@@ -2,8 +2,8 @@ import React from 'react';
 
 const StepCard = ({ stepNumber, icon, title, description }) => {
     return (
-        <div className='relative mt-[8%] w-full md:mt-[1%] w-[45%] lg:w-[30%] max-w-sm mx-auto'>
-            <div className="absolute left-28 -top-2 md:left-24 -top-3 w-8 h-8 rounded-full bg-white text-black text-sm font-bold flex items-center justify-center shadow-md z-10">
+        <div className='relative mt-[8%] w-full md:mt-[1%] lg:w-[30%] max-w-sm mx-auto'>
+            <div className="absolute left-28 -top-2 md:left-24 w-8 h-8 rounded-full bg-white text-black text-sm font-bold flex items-center justify-center shadow-md z-10">
                 {stepNumber}
             </div>
             <div className='flex flex-col items-center justify-center'>
