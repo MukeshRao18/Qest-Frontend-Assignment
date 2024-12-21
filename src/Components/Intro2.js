@@ -46,7 +46,7 @@ const Intro2 = () => {
             </div>
             {/* Steps */}
             <div className='w-full flex items-center justify-center'>
-            <div className="w-full mt-[5%] w-[80%] md:mt-[6%] md:flex flex-row items-center justify-center">
+            <div className="mt-[5%] w-[80%] md:mt-[6%] md:flex flex-row items-center justify-center">
                 {steps.map((step, index) => (
                     <StepCard
                         key={index}
