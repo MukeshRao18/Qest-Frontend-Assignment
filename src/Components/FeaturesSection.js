@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Users, Star, Briefcase, Building2, Layout, ChevronRight } from 'lucide-react';
+import { Calendar,  Star, Briefcase, ChevronRight } from 'lucide-react';
 import computer from '../Components/assests/computer.png'
 
 const FeaturesSection = () => {
@@ -50,7 +50,7 @@ const FeaturesSection = () => {
         {features.slice(0, 3).map((feature, index) => (
           <div 
             key={index}
-            className={`p-6 rounded-lg bg-white`}
+            className="p-6 rounded-lg bg-white border border-transparent hover:border-red-500 transition-all duration-300"
           >
             <div className="mb-4 w-full flex items-center justify-center">{feature.icon}</div>
             <h3 className="text-lg font-semibold mb-2 text-center">{feature.title}</h3>
@@ -64,7 +64,7 @@ const FeaturesSection = () => {
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="md:col-span-1">
+        <div className="md:col-span-1 p-6 rounded-lg bg-white border border-transparent hover:border-red-500 transition-all duration-300">
           <img
             src={computer}
             alt="Analytics Dashboard"
@@ -82,7 +82,7 @@ const FeaturesSection = () => {
           </div>
         </div>
         <div className="md:col-span-2 grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-lg bg-white border border-gray-100 hover:shadow-lg transition-shadow">
+          <div className="p-6 rounded-lg bg-white border border-transparent hover:border-red-500 transition-all duration-300">
             <div className="mb-4 w-full flex items-center justify-center">{features[3].icon}</div>
             <h3 className="text-lg font-semibold mb-2 text-center">{features[3].title}</h3>
             <p className="text-gray-600 text-sm mb-4 text-center">{features[3].description}</p>
@@ -92,7 +92,7 @@ const FeaturesSection = () => {
             </button>
           </div>
           
-          <div className="row-span-2 p-6 rounded-lg bg-white border border-gray-100 hover:shadow-lg transition-shadow">
+          <div className="row-span-2 p-6 rounded-lg bg-white border border-transparent hover:border-red-500 transition-all duration-300">
             <h3 className="text-lg font-semibold mb-2 text-center">{features[4].title}</h3>
             <p className="text-gray-600 text-sm mb-4 text-center">{features[4].description}</p>
             <button className="text-blue-600 text-sm w-full flex items-center justify-center gap-1 hover:gap-2 transition-all">
@@ -107,7 +107,7 @@ const FeaturesSection = () => {
             />
           </div>
 
-          <div className="p-6 rounded-lg bg-white border border-gray-100 hover:shadow-lg transition-shadow">
+          <div className="p-6 rounded-lg bg-white border border-transparent hover:border-red-500 transition-all duration-300">
             <div className="mb-4 w-full flex items-center justify-center">{features[5].icon}</div>
             <h3 className="text-lg font-semibold mb-2 text-center">{features[5].title}</h3>
             <p className="text-gray-600 text-sm mb-4 text-center">{features[5].description}</p>

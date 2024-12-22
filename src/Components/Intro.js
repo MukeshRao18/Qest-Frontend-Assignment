@@ -39,7 +39,7 @@ const Intro = () => {
         <div className="border border-red-500 bg-red-500 text-white p-3 rounded-md text-center cursor-pointer w-full sm:w-auto">
           Get Started <span>{'->'}</span>
         </div>
-        <div className="border border-black text-black p-3 rounded-md text-center cursor-pointer w-full sm:w-auto">
+        <div className="border border-black text-black p-3 rounded-md text-center cursor-pointer w-full sm:w-auto hover:border-red-500 transition-all duration-300">
           Book a Demo
         </div>
       </div>
