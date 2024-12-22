@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, ChevronDown, ChevronRight } from 'lucide-react';
-
+import {  ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -70,7 +69,7 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex items-center space-x-8">
           <div className="flex items-center space-x-6">
-            <Link to="/" className="text-gray-700 hover:text-black">
+            <Link to="/" className="text-gray-700 hover:text-black px-3 py-2 rounded-md hover:bg-red-50">
               Home
             </Link>
             <div
@@ -78,55 +77,24 @@ const Navbar = () => {
               onMouseEnter={() => setShowFeatures(true)}
               onMouseLeave={() => setShowFeatures(false)}
             >
-              <Link to="/" className="flex items-center justify-center text-gray-700 hover:text-black">
+              <Link to="/" className="flex items-center justify-center text-gray-700 hover:text-black px-3 py-2 rounded-md hover:bg-red-50">
                 Features<ChevronDown className="relative top-0.5 left-0.5 w-5 h-5 text-gray-500" />
               </Link>
               {showFeatures && (
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-white rounded-lg shadow-xl p-6 grid grid-cols-4 gap-6 z-50">
-                  <div>
-                    <h3 className="font-semibold mb-4 text-lg">Discover</h3>
-                    <div className="space-y-3">
-                      {features.discover.map((item, index) => (
-                        <div key={index} className="flex items-center gap-2 text-gray-600 hover:text-black">
-                          <span>{item.icon}</span>
-                          <span>{item.name}</span>
-                        </div>
-                      ))}
+                  {Object.entries(features).map(([category, items]) => (
+                    <div key={category}>
+                      <h3 className="font-semibold mb-4 text-lg capitalize">{category}</h3>
+                      <div className="space-y-3">
+                        {items.map((item, index) => (
+                          <div key={index} className="flex items-center gap-2 text-gray-600 hover:text-black">
+                            <span>{item.icon}</span>
+                            <span>{item.name}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-4 text-lg">Manage</h3>
-                    <div className="space-y-3">
-                      {features.manage.map((item, index) => (
-                        <div key={index} className="flex items-center gap-2 text-gray-600 hover:text-black">
-                          <span>{item.icon}</span>
-                          <span>{item.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-4 text-lg">Communicate</h3>
-                    <div className="space-y-3">
-                      {features.communicate.map((item, index) => (
-                        <div key={index} className="flex items-center gap-2 text-gray-600 hover:text-black">
-                          <span>{item.icon}</span>
-                          <span>{item.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-4 text-lg">Grow</h3>
-                    <div className="space-y-3">
-                      {features.grow.map((item, index) => (
-                        <div key={index} className="flex items-center gap-2 text-gray-600 hover:text-black">
-                          <span>{item.icon}</span>
-                          <span>{item.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  ))}
                   <div className="col-span-4 mt-4 text-center">
                     <Link to="/" className="text-red-500 hover:text-red-600 inline-flex items-center">
                       See all features
@@ -138,18 +106,18 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <Link to="/pricing" className="text-gray-700 hover:text-black">
+            <Link to="/pricing" className="text-gray-700 hover:text-black px-3 py-2 rounded-md hover:bg-red-50">
               Pricing
             </Link>
-            <Link to="/solutions" className="flex items-center justify-center text-gray-700 hover:text-black">
+            <Link to="/" className="flex items-center justify-center text-gray-700 hover:text-black px-3 py-2 rounded-md hover:bg-red-50">
               Solutions<ChevronDown className="relative top-0.5 left-0.5 w-5 h-5 text-gray-500" />
             </Link>
           </div>
           <div className="flex items-center space-x-4 h-auto">
             <hr className="w-px h-5 bg-gray-400 border-0" />
-            <button className="text-gray-700 border border-gray-300 px-4 py-2 rounded hover:bg-gray-100">
+            <Link to="/solutions" className="text-gray-700 border border-gray-300 px-4 py-2 rounded hover:bg-red-600 hover:text-white hover:border-red-600 transition-colors duration-200">
               Login
-            </button>
+            </Link>
             <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
               Try For Free
             </button>
@@ -160,12 +128,12 @@ const Navbar = () => {
       {menuOpen && (
         <div className="md:hidden w-[90%] mx-auto bg-white shadow-lg px-4 pb-4 mt-2 rounded-md">
           <div className="flex flex-col space-y-4">
-            <Link to="/" className="text-gray-700 hover:text-black" onClick={() => setMenuOpen(false)}>
+            <Link to="/" className="text-gray-700 hover:text-black hover:bg-red-50 px-3 py-2 rounded-md" onClick={() => setMenuOpen(false)}>
               Home
             </Link>
             <div className="space-y-2">
               <button 
-                className="text-gray-700 hover:text-black w-full text-left flex justify-between items-center"
+                className="text-gray-700 hover:text-black w-full text-left flex justify-between items-center hover:bg-red-50 px-3 py-2 rounded-md"
                 onClick={() => setShowFeatures(!showFeatures)}
               >
                 Features
@@ -191,16 +159,16 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <Link to="/pricing" className="text-gray-700 hover:text-black" onClick={() => setMenuOpen(false)}>
+            <Link to="/pricing" className="text-gray-700 hover:text-black hover:bg-red-50 px-3 py-2 rounded-md" onClick={() => setMenuOpen(false)}>
               Pricing
             </Link>
-            <Link to="/solutions" className="text-gray-700 hover:text-black" onClick={() => setMenuOpen(false)}>
+            <Link to="/" className="text-gray-700 hover:text-black hover:bg-red-50 px-3 py-2 rounded-md" onClick={() => setMenuOpen(false)}>
               Solutions
             </Link>
             <div className="flex flex-col space-y-2 pt-2">
-              <button className="text-gray-700 border border-gray-300 px-4 py-2 rounded hover:bg-gray-100">
+              <Link to="/solutions" className="text-gray-700 border border-gray-300 px-4 py-2 rounded hover:bg-red-600 hover:text-white hover:border-red-600 transition-colors duration-200 text-center">
                 Login
-              </button>
+              </Link>
               <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
                 Try For Free
               </button>
